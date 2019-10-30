@@ -1,0 +1,80 @@
+﻿@model ResultUpload.Models.Result
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @if (Model == null)
+        {
+            <form method="post" asp-action="Details">
+                <div class="form-group">
+                    <label asp-for="PassWord" class="control-label"></label>
+                    <input asp-for="PassWord" class="form-control" type="password" placeholder="请输入密码" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <p><button type="submit" class="btn text-center">查看</button></p>
+            </form>
+        }
+        else
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.SName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Discription)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Discription)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Create)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Create)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Type.TName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PassWord)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PassWord)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Attachmet)
+            </dt>
+            <dd>
+                @*如果附件存在可下载*@
+                @*@Html.DisplayFor(model => model.Attachmet)*@
+                @if (!string.IsNullOrEmpty(Model.Attachmet))
+                {
+                    <a href="~/@Model.Attachmet">下载</a>
+                }
+            </dd>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+                <a asp-action="Index">Back to List</a>
+            </div>
+        }
+    </dl>
+</div>
+

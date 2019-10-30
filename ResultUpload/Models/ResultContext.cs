@@ -1,0 +1,23 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ResultUpload.ViewModel;
+
+namespace ResultUpload.Models
+{
+    public class ResultContext:DbContext
+    {
+        //有参数的构造方法
+        public ResultContext(DbContextOptions<ResultContext> options):base(options)
+        {
+
+        }
+       
+        public DbSet<Result> Results { get; set; }
+
+        public DbSet<ResultType> ResultTypes { get; set; }
+              
+    }
+}

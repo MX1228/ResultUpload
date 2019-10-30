@@ -1,0 +1,66 @@
+﻿@model ResultUpload.Models.Result
+
+@{
+    ViewData["Title"] = "Edit";
+    var type = ViewBag.Type as IEnumerable<SelectListItem>;
+}
+
+<h2>Edit</h2>
+
+<h4>Result</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="SName" class="control-label"></label>
+                <input asp-for="SName" class="form-control" />
+                <span asp-validation-for="SName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discription" class="control-label"></label>
+                <input asp-for="Discription" class="form-control" />
+                <span asp-validation-for="Discription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Create" class="control-label"></label>
+                <input asp-for="Create" class="form-control" />
+                <span asp-validation-for="Create" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TID" class="control-label"></label>
+                <select asp-for="TID" class="form-control" asp-items="type"></select>
+                <span asp-validation-for="TID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassWord" class="control-label"></label>
+                <input asp-for="PassWord" class="form-control" />
+                <span asp-validation-for="PassWord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attachmet" class="control-label"></label>
+                <input asp-for="Attachmet" class="form-control" />
+                重新上传<input asp-for="Attachmet" class="form-control" type="file" />
+                <span asp-validation-for="Attachmet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

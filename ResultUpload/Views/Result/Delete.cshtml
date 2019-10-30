@@ -1,0 +1,60 @@
+﻿@model ResultUpload.Models.Result
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>是否删除？</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Discription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Discription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Create)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Create)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Type.TName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PassWord)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassWord)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Attachmet)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Attachmet)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-primary" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

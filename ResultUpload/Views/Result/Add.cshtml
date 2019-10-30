@@ -1,0 +1,65 @@
+﻿@model ResultUpload.ViewModel.ResultModel
+
+
+@{
+    ViewData["Title"] = "Add";
+    var type = ViewBag.Types as IEnumerable<SelectListItem>;
+}
+
+<h1>Add</h1>
+
+<h4>ResultModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+                                             @*不对字符编码，表单才会把文件的内容编码到HTML请求中*@
+        <form asp-action="Add" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SName" class="control-label"></label>
+                <input asp-for="SName" class="form-control" />
+                <span asp-validation-for="SName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discription" class="control-label"></label>
+                <input asp-for="Discription" class="form-control" />
+                <span asp-validation-for="Discription" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TID" class="control-label"></label>
+                <select asp-for="TID" class="form-control" asp-items="type"></select>
+                <span asp-validation-for="Discription" class="text-danger"></span>
+            </div>
+            @*密码*@
+            <div class="form-group">
+                <label asp-for="PassWord" class="control-label"></label>
+                <input asp-for="PassWord" class="form-control" type="password" placeholder="如需加密请输入密码" />
+                <span asp-validation-for="PassWord" class="text-danger"></span>
+            </div>
+            @*上传附件*@
+            <div class="form-group">
+                <label asp-for="Attachmet" class="control-label"></label>
+                <input asp-for="Attachmet" class="form-control" type="file" />  @*上传*@
+                <span asp-validation-for="Attachmet" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
