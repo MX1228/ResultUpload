@@ -16,7 +16,6 @@ namespace ResultUpload.ViewModel
         public string Discription { get; set; }
         //类别
         public string Type { get; set; }
-        //附件
         public string Attachmet { get; set; }
     }
 }
