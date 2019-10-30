@@ -1,0 +1,15 @@
+{
+  //Êı¾İ¿â
+  "database": {
+    "Server": "192.168.1.201",
+    "Name": "Students",
+    "Uid": "sa",
+    "Password": "123456"
+  },
+  "database2": {
+    "Server": "192.168.1.202",
+    "Name": "Student1",
+    "Uid": "sa",
+    "Password": "123456"
+  }
+}

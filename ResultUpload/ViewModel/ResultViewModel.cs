@@ -8,7 +8,9 @@ namespace ResultUpload.ViewModel
     public class ResultViewModel
     {
         public int ID { get; set; }
+        //学生姓名
         public string SName { get; set; }
+        //标题
         public string Title { get; set; }
         public string Discription { get; set; }
         public string Type { get; set; }
