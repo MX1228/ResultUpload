@@ -36,3 +36,4 @@ D:\工作\学习\ResultUpload\ResultUpload\obj\Debug\netcoreapp2.2\Razor\Views\T
 D:\工作\学习\ResultUpload\ResultUpload\obj\Debug\netcoreapp2.2\Razor\Views\Result\Details.cshtml.g.cs
 D:\工作\学习\ResultUpload\ResultUpload\obj\Debug\netcoreapp2.2\Razor\Views\Result\Edit.cshtml.g.cs
 D:\工作\学习\ResultUpload\ResultUpload\obj\Debug\netcoreapp2.2\Razor\Views\Result\Delete.cshtml.g.cs
+D:\工作\学习\ResultUpload\ResultUpload\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.cshtml.g.cs
